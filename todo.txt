@@ -1,0 +1,4 @@
+Setup stuff: Tests, get the program running.
+Change the data files.
+Commit and save
+Do the exercises

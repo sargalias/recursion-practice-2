@@ -1,0 +1,146 @@
+{
+  "name": "John Smith",
+  "title": "CEO",
+  "department": "Executive",
+  "salary": 120000,
+  "subordinates": [
+    {
+      "name": "Alice Johnson",
+      "title": "Head of Marketing",
+      "department": "Marketing",
+      "salary": 80000,
+      "subordinates": [
+        {
+          "name": "John Smith",
+          "title": "CEO",
+          "department": "Executive",
+          "salary": 120000,
+          "subordinates": []
+        },
+        {
+          "name": "David Thompson",
+          "title": "Marketing Executive",
+          "department": "Marketing",
+          "salary": 65000,
+          "subordinates": []
+        },
+        {
+          "name": "Emma Brown",
+          "title": "Marketing Trainee",
+          "department": "Marketing",
+          "salary": 20000,
+          "subordinates": []
+        },
+        {
+          "name": "George Wilson",
+          "title": "Marketing Executive",
+          "department": "Marketing",
+          "salary": 70000,
+          "subordinates": []
+        }
+      ]
+    },
+    {
+      "name": "Robert Davis",
+      "title": "Head of Sales",
+      "department": "Sales",
+      "salary": 90000,
+      "subordinates": [
+        {
+          "name": "Linda Martinez",
+          "title": "Sales Manager",
+          "department": "Sales",
+          "salary": 75000,
+          "subordinates": [
+            {
+              "name": "Peter Thompson",
+              "title": "Sales Executive",
+              "department": "Sales",
+              "salary": 60000,
+              "subordinates": []
+            },
+            {
+              "name": "Sophia Clark",
+              "title": "Sales Trainee",
+              "department": "Sales",
+              "salary": 25000,
+              "subordinates": []
+            },
+            {
+              "name": "Oliver Wright",
+              "title": "Sales Executive",
+              "department": "Sales",
+              "salary": 40000,
+              "subordinates": []
+            },
+            {
+              "name": "Nancy Adams",
+              "title": "Senior Sales Executive",
+              "department": "Sales",
+              "salary": 55000,
+              "subordinates": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Michael Brown",
+      "title": "Head of IT",
+      "department": "IT",
+      "salary": 110000,
+      "subordinates": [
+        {
+          "name": "Jennifer Wilson",
+          "title": "First Line Support",
+          "department": "IT",
+          "salary": 22000,
+          "subordinates": []
+        },
+        {
+          "name": "Matthew Thompson",
+          "title": "Quality Assurance",
+          "department": "IT",
+          "salary": 35000,
+          "subordinates": []
+        },
+        {
+          "name": "Karen Taylor",
+          "title": "Product Owner",
+          "department": "IT",
+          "salary": 70000,
+          "subordinates": []
+        },
+        {
+          "name": "Steven Johnson",
+          "title": "Lead Developer",
+          "department": "IT",
+          "salary": 110000,
+          "subordinates": [
+            {
+              "name": "Mary White",
+              "title": "Senior Developer",
+              "department": "IT",
+              "salary": 95000,
+              "subordinates": []
+            },
+            {
+              "name": "Richard Harris",
+              "title": "Developer",
+              "department": "IT",
+              "salary": 80000,
+              "subordinates": []
+            },
+            {
+              "name": "Jessica King",
+              "title": "Junior Developer",
+              "department": "IT",
+              "salary": 60000,
+              "subordinates": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
