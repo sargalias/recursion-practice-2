@@ -6,110 +6,115 @@ export interface Employee {
   subordinates: Employee[];
 }
 
-// returns true if the employee is a match
 export type EmployeePredicate = (employee: Employee) => boolean;
 
-const defaultEmployee: Employee = {
-  name: '',
-  title: '',
-  department: '',
-  salary: -1,
-  subordinates: [],
-};
-
-export const hasNoDuplicates = (
-  employees: Employee,
-  namesSeenSoFar?: Set<string>,
+export const hasUniqueEmployees = (
+  employee: Employee,
+  namesSeenSoFar: Set<string> = new Set<string>(),
 ): boolean => {
-  if (!namesSeenSoFar) {
-    namesSeenSoFar = new Set<string>();
-  }
-
-  if (namesSeenSoFar.has(employees.name)) {
-    return false;
-  }
-
-  namesSeenSoFar.add(employees.name);
-
-  if (employees.subordinates.length === 0) return true;
-
-  let duplicate = employees.subordinates.find(
-    (e) => !hasNoDuplicates(e, namesSeenSoFar),
-  );
-
-  return !duplicate;
+  return true;
 };
 
-// finds the first employee that matches the predicate
 export const findEmployee = (
-  employees: Employee,
+  employee: Employee,
   predicate: EmployeePredicate,
 ): Employee | null => {
   return null;
 };
 
-// finds the highest paid employee in the loaded employees
-export const findHighestPaidEmployee = (employees: Employee): Employee => {
-  return defaultEmployee;
+// a stack implementation of the findEmployee function
+export const findEmployeeStack = (
+  employee: Employee,
+  predicate: EmployeePredicate,
+): Employee | null => {
+  return null;
 };
 
-// finds the lowest paid employee in the loaded employees
-export const findLowestPaidEmployee = (employees: Employee): Employee => {
-  return defaultEmployee;
+// a tail call optimised implementation of the findEmployee function
+export const findEmployeeTCO = (
+  employees: Employee[],
+  predicate: EmployeePredicate,
+): Employee | null => {
+  return null;
 };
 
-// gets an array of all the departments
-export const getDepartments = (employees: Employee): string[] => {
-  return [];
+// a tail call optimised, continuous passing style implementation of the findEmployee function
+export const findEmployeeCPS = (
+  employees: Employee[],
+  predicate: EmployeePredicate,
+  continuation = (x) => x,
+): Employee | null => {
+  return continuation(null);
 };
 
-// gets the number of employees in the specified department
-export const getDepartmentHeadcount = (
-  employees: Employee,
+const trampoline = (fn) => {
+  const execute = (...args) => {
+    let result = fn(...args);
+    while (typeof result === 'function') {
+      result = result();
+    }
+    return result;
+  };
+  return execute;
+};
+
+// an implementation of findEmployee using the trampoline function to avoid stack overflow
+export const findEmployeeTrampoline = (
+  employees: Employee[],
+  predicate: EmployeePredicate,
+): Employee | null => {
+  return null;
+};
+
+export const findHighestPaidEmployee = (employee: Employee): Employee => {
+  return employee;
+};
+
+export const findLowestPaidEmployee = (employee: Employee): Employee => {
+  return employee;
+};
+
+export const getDepartments = (
+  employee: Employee,
+  departments: Set<string> = new Set(),
+): Set<string> => {
+  return new Set();
+};
+
+export const getDepartmentEmployeeCount = (
+  employee: Employee,
   department: string,
 ): number => {
-  return -1;
+  return 0;
 };
 
-// finds the department with the highest total pay
-export const findHighestPaidDepartment = (employees: Employee): string => {
+export const findHighestSpendDepartment = (employee: Employee): string => {
   return '';
 };
 
-// finds the department with the lowest total pay
-export const findLowestPaidDepartment = (employees: Employee): string => {
+export const findLowestSpendDepartment = (employee: Employee): string => {
   return '';
 };
 
-// adds an employee as a subordinate of the matching manager if one is supplied, else
-// adds all employees as subordinates of the supplied employee
-// should not mutate passed-in employees
 export const addEmployee = (
-  employees: Employee,
+  employee: Employee,
   managerName: string | null,
   subordinate: Employee,
 ): Employee => {
-  return employees;
+  return employee;
 };
 
-// removes the employee with the matching name, shifting all their subordinates up to their manager
-// if the highest level employee (the employee who is nobody's subordinate) is removed, then an error
-// should be thrown
-// should not mutate passed-in employees
 export const removeEmployee = (
-  employees: Employee,
-  employee: string,
+  employee: Employee,
+  nameToRemove: string,
 ): Employee => {
-  return employees;
+  return employee;
 };
 
-// replaces the employee with the matching name with the replacement employee, retaining
-// all subordinates from the replaced employee
-// should not mutate passed-in employees
 export const replaceEmployee = (
-  employees: Employee,
-  original: string,
+  employee: Employee,
+  leaverName: string,
   replacement: Employee,
 ): Employee => {
-  return employees;
+  return employee;
 };
